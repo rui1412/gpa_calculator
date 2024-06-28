@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GPA Calculator</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+</head>
+<body>
+
+    <header id="header">
+        <nav>
+            <div class="container">
+                    <h1 id="welcome">Grade Point Average Calculator</h1>
+                        <table id="main">
+                            <tr>
+                                <th>Course<br>(optional)</th>
+                                <th>Grade</th>
+                                <th>Credits</th>
+                                <th>Save</th>
+                            </tr>
+                            
+                            <% if (course.length !== 0) { %>
+                                <% for(var i = 0;i < course.length;i++) { %>
+                                <form action="/api/users" method="POST">
+                                <tr>
+                                    <% if (i === 0) { %>
+                                        <th><input type="text" placeholder="Math 150" value="<%= course[i].Course %>" name="Course"></th>
+                                        <th><input type="text" value="<%= course[i].Grade %>" name="Grade" required></th>
+                                        <th><input type="number" min="1" max="4" value="<%= course[i].Credits %>" name="Credits" required></th>
+                                        <th style="text-align: center;"><input type="submit" value="Save" id="saving"></th>
+                                    <% } else { %>
+                                        <th><input type="text" placeholder="Math 150" value="<%= course[i].Course %>" name="Course"></th>
+                                        <th><input type="text" value="<%= course[i].Grade %>" name="Grade" required></th>
+                                        <th><input type="number" min="1" max="4" value="<%= course[i].Credits %>" name="Credits" required></th>
+                                    <% } %>
+                                </tr>
+                                </form>
+                                <% } %>
+                            <% } else { %>
+                                <form action="/api/users" method="POST">
+                                    <tr>
+                                        <th><input type="text" placeholder="Math 150" name="Course"></th>
+                                        <th><input type="text" value="A+" name="Grade" required></th>
+                                        <th><input type="number" min="1" max="4" value="3" name="Credits" required></th>
+                                        <th style="text-align: center;"><input type="submit" value="Save" id="saving"></th>
+                                    </tr>
+                                </form>
+                            <% } %>
+                        
+                        </table>
+                    
+                    <button class="calreset" onclick="addRow()">+ Add Row</button>
+                    <button class="calreset" onclick="calculate()">= Calculate</button>
+                    <button class="calreset" onclick="reset()">X Reset</button>
+                    <p id="GPA">GPA: </p> 
+                    <div class="instru">
+                        <h2>Instructions:</h2>
+                        <ol>
+                            <li>Use the top row's save button to save any courses. You can safely change those values to save whatever class you like. No duplicates. Make sure you have a unique class name if you want to save it.</li>
+                            <li>Use the add row button to add a new row to the table. To save the data from the add row cell. Input it to the top row.</li>
+                            <li>The reset button will delete all saved courses and will give you a empty table.</li>
+                            <li>The calculate button will calculate your GPA. Make sure to input a correct letter grade, "A+, A, B+, B, C+, C, D, F", anything that is not correct will automatically be counted as a zero. Lowercase works too.</li>
+                        </ol>
+                    </div>
+            </div>
+        </nav>
+    </header>
+    <script src="/js/index.js"></script>
+</body>
+</html>

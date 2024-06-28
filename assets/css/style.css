@@ -1,0 +1,57 @@
+body{
+    background-color: beige;
+}
+
+#welcome {
+    text-align: center;
+    font-size: 50px;
+}
+
+#main{
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    text-align: left;
+    border-collapse: hidden;
+}
+
+th{
+    background-color:cornflowerblue;
+    color: white;
+    padding: 3px;
+}
+
+input {
+    font-size: 20px;
+    padding: 10px;
+}
+
+#addrow{
+    padding: 10px;
+    font-size: 20px;
+    margin-left: 25%;
+    text-align: center;
+    width: 50%;
+}
+
+.calreset {
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    width: 15%;
+    margin-left: 42%;
+    margin-right: auto;
+}
+
+#GPA{
+    text-align: center;
+    font-size: 30px;
+}
+
+.instru{
+    font-size: 20px;
+}
+
+
+
