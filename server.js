@@ -30,7 +30,7 @@ app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 
 app.get('/', (req, res) => {
     //get all courses
-    axios.get('http://localhost:3000/api/users')
+    axios.get('https://gpa-calculator-anisur-rahman.onrender.com/api/users')
         .then(function(response){
             res.render('index',{course:response.data});
         })
@@ -45,4 +45,4 @@ app.get('/api/users', controller.find)
 app.put('/api/users/:id', controller.update)
 app.delete('/api/users', controller.delete)
 
-app.listen(PORT, ()=> {console.log(`Server is running on http://localhost:${PORT}`)})
+app.listen(PORT, ()=> {console.log(`Server is running on https://gpa-calculator-anisur-rahman.onrender.com:${PORT}`)})

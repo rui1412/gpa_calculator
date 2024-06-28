@@ -35,7 +35,7 @@ function calculate(){
 }
 
 function reset(){
-    fetch('http://localhost:3000/api/users', {method:'DELETE'})
+    fetch('https://gpa-calculator-anisur-rahman.onrender.com/api/users', {method:'DELETE'})
         .then(data=>{
             console.log(data)
         })
