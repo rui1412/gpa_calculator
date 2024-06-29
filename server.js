@@ -43,6 +43,6 @@ app.get('/', (req, res) => {
 app.post('/api/users', controller.create)
 app.get('/api/users', controller.find)
 app.put('/api/users/:id', controller.update)
-app.delete('/api/users', controller.delete)
+app.delete('/api/users/delete', controller.delete)
 
 app.listen(PORT, ()=> {console.log(`Server is running on https://gpa-calculator-anisur-rahman.onrender.com:${PORT}`)})

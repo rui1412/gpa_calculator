@@ -35,13 +35,13 @@ function calculate(){
 }
 
 function reset(){
-    fetch('https://gpa-calculator-anisur-rahman.onrender.com/api/users', {method:'DELETE'})
+    fetch('https://gpa-calculator-anisur-rahman.onrender.com/api/users/delete', {method:'DELETE'})
         .then(data=>{
             console.log(data)
+            location.reload()
         })
         .catch(err=>{
             console.log(err)
         })
 
-    location.reload();
 }
